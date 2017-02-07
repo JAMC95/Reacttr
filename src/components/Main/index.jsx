@@ -5,9 +5,10 @@ class Main extends Component {
   constructor() {
     super()
     this.state = {
-      messages: [{
-        text: 'Mensaje de prueba'
-      }]
+      messages: [
+        {text: 'Mensaje de prueba'},
+        {text: 'Otro mensaje más'}
+      ]
     }
   }
   render(){
