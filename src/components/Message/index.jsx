@@ -30,8 +30,8 @@ render () {
       </div>
     </div>
   </div>
-)
-}
+    )
+  }
 
 }
 export default Message
