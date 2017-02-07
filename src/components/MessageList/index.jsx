@@ -10,7 +10,7 @@ class MessageList extends Component {
       <div>
         {this.props.messages.map(msg => {
           return (
-              <span>{msg.text}</span>
+            <Message text= {msg.text} />
           )
         })}
       </div>
