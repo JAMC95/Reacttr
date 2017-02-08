@@ -6,7 +6,7 @@ class Main extends Component {
   constructor() {
     super()
     this.state = {
-      openText: false
+      openText: false,
       messages: [
         {
         text: 'Mensaje del Tweet',
@@ -44,7 +44,7 @@ renderOpenText(){
       <div>
       <ProfileBar
         picture={this.props.user.photoURL}
-        username={this.props.email.split(@)[0]}
+        username={this.props.email.split('@')[0]}
         onOpenText={this.handleOpenText}
       />
     {this.renderOpenText()}
