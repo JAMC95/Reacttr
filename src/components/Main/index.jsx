@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuid from 'uuid'
 import MessageList from '../MessageList'
 import InputText from '../InputText'
 import ProfileBar from '../ProfileBar'
@@ -45,7 +46,7 @@ renderOpenText(){
       <div>
       <ProfileBar
         picture={this.props.user.photoURL}
-        username={this.props.email.split('@')[0]}
+        username={this.props.user.email.split('@')[0]}
         onOpenText={this.handleOpenText}
       />
     {this.renderOpenText()}

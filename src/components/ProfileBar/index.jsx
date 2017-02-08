@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import styles from './profile-bar.css'
 
 class ProfileBar extends Component {
-
+  constructor() {
+    super()
+  }
   render(){
     return(
       <div className={styles.root}>
