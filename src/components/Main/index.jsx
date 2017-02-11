@@ -34,7 +34,21 @@ class Main extends Component {
     this.handleCloseText = this.handleCloseText.bind(this)
     this.handleOpenText = this.handleOpenText.bind(this)
   }
-
+handleSendText(event){
+  event.preventDefault()
+  let newMessage = {
+    id: uuid.v4(),
+    username: this.props.user.email.split('@')[0],
+    displayName: this.props.user.displayName,
+    date: Date.now(),
+    text: event.target.text.value
+  }
+  console.log(newMessage)
+}
+handleCloseText(event){
+  event.preventDefault()
+  this.setState({openText:false})
+}
   handleOpenText(event){
     event.preventDefault()
     this.setState({openText: true})
