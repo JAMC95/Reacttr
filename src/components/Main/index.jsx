@@ -30,6 +30,9 @@ class Main extends Component {
 
     }
 
+    this.handleSendText = this.handleSendText.bind(this)
+    this.handleCloseText = this.handleCloseText.bind(this)
+    this.handleOpenText = this.handleOpenText.bind(this)
   }
 
   handleOpenText(event){
@@ -38,7 +41,12 @@ class Main extends Component {
   }
 renderOpenText(){
   if(this.state.openText){
-    return <InputText />
+    return (
+      <InputText
+        onSendText={this.handleSendText}
+        onCloseText={this.handleCloseText}
+        />
+    )
   }
 }
   render(){
@@ -47,7 +55,7 @@ renderOpenText(){
       <ProfileBar
         picture={this.props.user.photoURL}
         username={this.props.user.email.split('@')[0]}
-        onOpenText={this.handleOpenText.bind(this)}
+        onOpenText={this.handleOpenText}
       />
     {this.renderOpenText()}
       <MessageList messages={this.state.messages} />
