@@ -23,8 +23,8 @@ class MessageList extends Component {
               date={msg.date}
               numRetweets={msg.retweets}
               numFavorites={msg.favorites}
-              onRetweet={() => this.onRetweet(msg.id)}
-              onFavorite={() => this.onFavorite(msg.id)}
+              onRetweet={() => this.props.onRetweet(msg.id)}
+              onFavorite={() => this.props.onFavorite(msg.id)}
                />
           )
         }).reverse()

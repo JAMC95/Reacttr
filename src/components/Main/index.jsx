@@ -82,7 +82,11 @@ renderOpenText(){
         onOpenText={this.handleOpenText}
       />
     {this.renderOpenText()}
-      <MessageList messages={this.state.messages} />
+      <MessageList 
+      messages={this.state.messages}
+      onRetweet={this.handleRetweet}
+      onFavorite={this.handleFavorite}
+       />
       </div>
     )
   }
