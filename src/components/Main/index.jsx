@@ -16,7 +16,9 @@ class Main extends Component {
         picture: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
         displayName: 'Jose Antonio Moral',
         username: 'joxe.bailen',
-        date: Date.now() - 180000
+        date: Date.now() - 180000,
+        retweets: 0,
+        favorites: 0
       },
       {
            id: uuid.v4(),
@@ -24,7 +26,9 @@ class Main extends Component {
           picture: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
           displayName: 'Jose Antonio Moral',
           username: 'joxe.bailen',
-          date: Date.now() - 298888
+          date: Date.now() - 298888,
+          retweets: 0,
+          favorites: 0
           }
         ]
 

@@ -21,12 +21,15 @@ render () {
     <div className={styles.buttons}>
       <div className={styles.icon}>
         <span className='fa fa-reply'></span>
+        
       </div>
       <div className={styles.icon}>
         <span className='fa fa-retweet'></span>
+        <span className={styles.num}>{this.props.numRetweets}</span>
       </div>
       <div className={styles.icon}>
         <span className='fa fa-star'></span>
+        <span className={styles.num}>{this.props.numFavorites}</span>
       </div>
     </div>
   </div>
