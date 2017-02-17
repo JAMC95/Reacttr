@@ -54,7 +54,7 @@ render () {
         <span className={styles.num}>{this.props.numRetweets}</span>
       </div>
       <div
-       className={(this.state.pressFavorite)? styles.faveYello : ''}
+       className={(this.state.pressFavorite)? styles.favYello : ''}
        onClick={this.props.onPressFavorite}
        >
         <span className='fa fa-star'></span>

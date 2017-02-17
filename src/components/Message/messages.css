@@ -21,7 +21,7 @@
   height: 34px;
   border-radius: 50%;
 }
-.displayName{
+.displayName {
   font-weight: bold;
   padding: 0.5em;
 }
@@ -41,11 +41,18 @@
   color: #aaa;
 }
 
-.icon{
+.icon {
   margin-right: 3em;
 }
-.num{
+.num {
   font-size: 10pt;
   margin-right: 3em;
   margin-left: 0.25em;
+}
+
+.rtGreen {
+  color: #20883f;
+}
+.favYellow {
+  color: #fff000;
 }
