@@ -5,6 +5,29 @@ import styles from './messages.css'
 class Message extends Component {
   constructor (props) {
     super(props)
+    
+    this.state = {
+      pressFavorite: false,
+      onPressRetweet: false
+
+    }
+
+    this.onPressRetweet = this.onPressRetweet.bind(this)
+    this.onPressFavorite = this.onPressFavorite.bind(this)
+  }
+  onPressFavorite(){
+    this.props.onFavorite()
+    this.setState({
+      pressFavorite: true
+
+    })
+  }
+  onPressRetweet(){
+  this.props.onRetweet()
+    this.setState({
+      pressFavorite: true
+
+    })
   }
 render () {
   let dateFormat = moment(this.props.date).fromNow()
@@ -23,11 +46,17 @@ render () {
         <span className='fa fa-reply'></span>
         
       </div>
-      <div className={styles.icon}>
+      <div
+       className={(this.state.onPressRetweet)? styles.rtGreen : ''}
+       onClick={this.props.onPressRetweet}
+       >
         <span className='fa fa-retweet'></span>
         <span className={styles.num}>{this.props.numRetweets}</span>
       </div>
-      <div className={styles.icon}>
+      <div
+       className={(this.state.pressFavorite)? styles.faveYello : ''}
+       onClick={this.props.onPressFavorite}
+       >
         <span className='fa fa-star'></span>
         <span className={styles.num}>{this.props.numFavorites}</span>
       </div>
