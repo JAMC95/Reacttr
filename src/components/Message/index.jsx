@@ -47,15 +47,15 @@ render () {
         
       </div>
       <div
-       className={(this.state.onPressRetweet)? styles.rtGreen : ''}
-       onClick={this.props.onPressRetweet}
+       className={(this.state.PressRetweet) ? styles.rtGreen : ''}
+       onClick={this.onPressRetweet}
        >
         <span className='fa fa-retweet'></span>
         <span className={styles.num}>{this.props.numRetweets}</span>
       </div>
       <div
-       className={(this.state.pressFavorite)? styles.favYello : ''}
-       onClick={this.props.onPressFavorite}
+       className={(this.state.pressFavorite) ? styles.favYello : ''}
+       onClick={this.onPressFavorite}
        >
         <span className='fa fa-star'></span>
         <span className={styles.num}>{this.props.numFavorites}</span>

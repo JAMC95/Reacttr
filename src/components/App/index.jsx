@@ -10,7 +10,7 @@ class App extends Component{
     super()
 
     this.state = {
-      user:{
+      user: {
         photoURL: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
         email: 'joxe.bailen@gmail.com',
         onOpenText: false,
