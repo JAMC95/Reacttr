@@ -22,7 +22,8 @@ class MessageList extends Component {
 
                />
           )
-        })}
+        }).reverse()
+        }
       </div>
     )
   }

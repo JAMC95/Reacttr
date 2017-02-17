@@ -13,7 +13,8 @@ class App extends Component{
       user:{
         photoURL: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
         email: 'joxe.bailen@gmail.com',
-        onOpenText: false
+        onOpenText: false,
+        displayName: 'Jose Antonio Moral'
       }
     }
   }

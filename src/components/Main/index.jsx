@@ -11,18 +11,19 @@ class Main extends Component {
       openText: false,
       messages: [
         {
+        id: uuid.v4(),
         text: 'Mensaje del Tweet',
         picture: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
         displayName: 'Jose Antonio Moral',
-        username: 'JXMay',
+        username: 'joxe.bailen',
         date: Date.now() - 180000
       },
       {
-
+           id: uuid.v4(),
           text: 'Mensaje viejo',
           picture: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
           displayName: 'Jose Antonio Moral',
-          username: 'JXMay',
+          username: 'joxe.bailen',
           date: Date.now() - 298888
           }
         ]
@@ -39,11 +40,16 @@ handleSendText(event){
   let newMessage = {
     id: uuid.v4(),
     username: this.props.user.email.split('@')[0],
+    text: event.target.text.value,
     displayName: this.props.user.displayName,
+    picture: this.props.user.photoURL,
     date: Date.now(),
-    text: event.target.text.value
+    
   }
-  console.log(newMessage)
+  this.setState({
+    messages: this.state.messages.concat(newMessage),
+    openText: false
+  })
 }
 handleCloseText(event){
   event.preventDefault()
