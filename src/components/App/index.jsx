@@ -7,13 +7,14 @@ import styles from './app.css'
 import Header from '../Header'
 import Main from '../Main'
 import Profile from '../Profile'
+import Login from '../Login'
 
 class App extends Component{
   constructor(){
     super()
 
     this.state = {
-      user: {
+       user: {
         photoURL: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
         email: 'joxe.bailen@gmail.com',
         onOpenText: false,
@@ -21,7 +22,12 @@ class App extends Component{
         location: 'España'
       }
     }
+    this.handleOnAuth = this.handleOnAuth.bind(this)
   }
+  handleOnAuth () {
+    console.log('Auth')
+  }
+
   render() {
     return(
       <HashRouter>
@@ -33,7 +39,9 @@ class App extends Component{
               <Main user={this.state.user}/>
             )
           }else{
-            // Render <Login />
+            return (
+              <Login onAuth={this.handleOnAuth} />
+            )
           }
         }} />
         
