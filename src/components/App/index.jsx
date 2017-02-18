@@ -31,9 +31,10 @@ class App extends Component{
   render() {
     return(
       <HashRouter>
-      <div>
+        <div>
         <Header />
-        <Match exactyly pattern='/' render={() => {
+
+        <Match exactly pattern='/' render={() => {
           if (this.state.user) {
             return (
               <Main user={this.state.user}/>
@@ -64,7 +65,7 @@ class App extends Component{
               username={params.username}
             />
           )
-        }}/>
+        }} />
       </div>
       </HashRouter>
     )

@@ -9,7 +9,7 @@ class ProfileBar extends Component {
   render(){
     return(
       <div className={styles.root}>
-        <Link to='/profile'>
+        <Link to="/profile">
         <figure>
           <img className={styles.avatar} src={this.props.picture}/>
         </figure>
