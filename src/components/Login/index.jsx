@@ -11,7 +11,7 @@ class Login extends Component {
                 <button
                     onClick={this.props.onAuth}
                     className={styles.button}>
-                    Login con GitHub
+                   <span className='fa fa-github'> </span> Login con GitHub
                 </button>
             </div>
         )
