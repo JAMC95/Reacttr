@@ -9,6 +9,10 @@
 
 .logo {
   margin: 0;
-  color: #fff;
   font-size: 14pt;
+}
+
+.logo > a {
+  text-decoration: none;
+  color: #fff;
 }
