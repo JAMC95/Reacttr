@@ -3,6 +3,7 @@ import uuid from 'uuid'
 import MessageList from '../MessageList'
 import InputText from '../InputText'
 import ProfileBar from '../ProfileBar'
+import firebase from 'firebase'
 
 const propTypes = {
   user: PropTypes.object.isRequired,
@@ -50,6 +51,15 @@ class Main extends Component {
     this.handleReplyTweet = this.handleReplyTweet.bind(this)
   }
 
+  componentWillMount () {
+    const messagesRef = firebase.database().ref().child('messages')
+    messagesRef.on('child_added', snapshot => {
+      this.setState({
+        messages: this.state.messages.concat(snapshot.val()),
+        openText: false
+      })
+    })
+  }
   handleReplyTweet(msgId, userNameToReply){
     this.setState({
       openText: true,
@@ -106,12 +116,11 @@ class Main extends Component {
       displayName: this.props.user.displayName,
       picture: this.props.user.photoURL,
       date: Date.now(),
-    
     }
-    this.setState({
-      messages: this.state.messages.concat(newMessage),
-      openText: false
-    })
+
+    const messageRef = firebase.database().ref().child('messages')
+    const messageID = messageRef.push()
+    messageID.set(newMessage)
 }
   handleCloseText(event){
   event.preventDefault()
