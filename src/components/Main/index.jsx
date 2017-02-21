@@ -116,6 +116,8 @@ class Main extends Component {
       displayName: this.props.user.displayName,
       picture: this.props.user.photoURL,
       date: Date.now(),
+      retweets: 0,
+      favorites: 0
     }
 
     const messageRef = firebase.database().ref().child('messages')
