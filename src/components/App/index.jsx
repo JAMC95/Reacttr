@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { HashRouter, Match } from 'react-router'
-
+import firebase from 'firebase'
 import 'normalize-css'
 
 import styles from './app.css'
@@ -25,7 +25,11 @@ class App extends Component{
     this.handleOnAuth = this.handleOnAuth.bind(this)
   }
   handleOnAuth () {
-    console.log('Auth')
+    const provider = new firebase.auth.GithubAuthProvider()
+
+    firebase.auth().signInWithPopup(provider)
+      .then(result => console.log(`${result.user.email} ha iniciado sesión`))
+      .catch(error => console.log(`Error: ${error.message}`))
   }
 
   render() {
