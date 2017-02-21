@@ -17,6 +17,7 @@ class App extends Component{
        user: null
     }
     this.handleOnAuth = this.handleOnAuth.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
   componentWillMount () {
@@ -37,6 +38,12 @@ class App extends Component{
       .catch(error => console.log(`Error: ${error.message}`))
   }
 
+  handleLogout () {
+    firebase.auth().signOut()
+      .then(() => console.log('Te has desconectado correctamente'))
+      .catch(error => console.log(`Error: ${error.message}`))
+  }
+  
   render() {
     return(
       <HashRouter>
@@ -48,6 +55,7 @@ class App extends Component{
             return (
               <Main 
                 user={this.state.user}
+                onLogout={this.handleLogout}
               />
             )
           }else{
