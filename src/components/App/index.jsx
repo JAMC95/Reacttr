@@ -14,16 +14,21 @@ class App extends Component{
     super()
 
     this.state = {
-       user: {
-        photoURL: 'https://pbs.twimg.com/profile_images/805766099631542272/L-G3MNLC_400x400.jpg',
-        email: 'joxe.bailen@gmail.com',
-        onOpenText: false,
-        displayName: 'Jose Antonio Moral',
-        location: 'España'
-      }
+       user: null
     }
     this.handleOnAuth = this.handleOnAuth.bind(this)
   }
+
+  componentWillMount () {
+    firebase.auth().onAuthStateChanged(user => {
+      if(user) {
+        this.setState({user})
+      } else {
+        this.setState({user: null})
+      }
+    })
+  }
+
   handleOnAuth () {
     const provider = new firebase.auth.GithubAuthProvider()
 
@@ -41,7 +46,9 @@ class App extends Component{
         <Match exactly pattern='/' render={() => {
           if (this.state.user) {
             return (
-              <Main user={this.state.user}/>
+              <Main 
+                user={this.state.user}
+              />
             )
           }else{
             return (
