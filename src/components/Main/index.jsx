@@ -60,6 +60,7 @@ class Main extends Component {
       })
     })
   }
+
   handleReplyTweet(msgId, userNameToReply){
     this.setState({
       openText: true,
@@ -67,6 +68,7 @@ class Main extends Component {
     })
     
   }
+
   handleRetweet(msgId){
     let alreadyRetweeted = this.state.user.retweets.filter(rt => rt === msgId)
 
@@ -124,14 +126,17 @@ class Main extends Component {
     const messageID = messageRef.push()
     messageID.set(newMessage)
 }
+
   handleCloseText(event){
   event.preventDefault()
   this.setState({openText:false})
 }
+
   handleOpenText(event){
     event.preventDefault()
     this.setState({openText: true})
   }
+
   renderOpenText(){
     if(this.state.openText){
       return (
@@ -143,7 +148,8 @@ class Main extends Component {
     )
   }
 }
-  render(){
+
+  render () {
     return (
       <div>
       <ProfileBar

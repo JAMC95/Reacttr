@@ -31,6 +31,7 @@ class Message extends Component {
     this.onPressRetweet = this.onPressRetweet.bind(this)
     this.onPressFavorite = this.onPressFavorite.bind(this)
   }
+
   onPressFavorite(){
     this.props.onFavorite()
     this.setState({
@@ -38,6 +39,7 @@ class Message extends Component {
 
     })
   }
+
   onPressRetweet(){
   this.props.onRetweet()
     this.setState({
@@ -45,6 +47,7 @@ class Message extends Component {
 
     })
   }
+  
 render () {
   let dateFormat = moment(this.props.date).fromNow()
   let userLink = `/user/${this.props.username}`

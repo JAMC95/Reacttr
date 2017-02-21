@@ -10,5 +10,7 @@ import firebase from 'firebase'
     messagingSenderId: "649331839011"
   
   });
+
 import App from './components/App'
+
 render(<App />, document.getElementById('root'))

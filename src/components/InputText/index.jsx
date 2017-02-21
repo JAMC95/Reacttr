@@ -6,7 +6,8 @@ class InputText extends Component {
     super(props)
 
   }
-  render(){
+  
+  render () { 
     return (
       <form className={styles.form} onSubmit={this.props.onSendText}>
         <textarea className={styles.text} name='text'>
