@@ -2,9 +2,6 @@ import React from 'react'
 import {render} from 'react-dom'
 import firebase from 'firebase'
 
-import App from './components/App'
-
-;
   firebase.initializeApp({
     apiKey: "AIzaSyAcUx7JEO3neY5cJUm1REOJTR1D1NTi5pY",
     authDomain: "curso-react-be2a2.firebaseapp.com",
@@ -13,5 +10,5 @@ import App from './components/App'
     messagingSenderId: "649331839011"
   
   });
-
+import App from './components/App'
 render(<App />, document.getElementById('root'))
